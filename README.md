@@ -15,21 +15,21 @@ e = embed('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 You can also use it from the command line:
 
     oembedders https://www.youtube.com/watch?v=dQw4w9WgXcQ
-		{
-			"author_url": "https://www.youtube.com/user/RickAstleyVEVO",
-			"title": "Rick Astley - Never Gonna Give You Up (Video)",
-			"thumbnail_width": 480,
-			"html": "<iframe width=\"480\" height=\"270\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-			"type": "video",
-			"thumbnail_url": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
-			"version": "1.0",
-			"author_name": "RickAstleyVEVO",
-			"provider_url": "https://www.youtube.com/",
-			"width": 480,
-			"provider_name": "YouTube",
-			"thumbnail_height": 360,
-			"height": 270
-		}
+    {
+      "author_url": "https://www.youtube.com/user/RickAstleyVEVO",
+      "title": "Rick Astley - Never Gonna Give You Up (Video)",
+      "thumbnail_width": 480,
+      "html": "<iframe width=\"480\" height=\"270\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "type": "video",
+      "thumbnail_url": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "version": "1.0",
+      "author_name": "RickAstleyVEVO",
+      "provider_url": "https://www.youtube.com/",
+      "width": 480,
+      "provider_name": "YouTube",
+      "thumbnail_height": 360,
+      "height": 270
+    }
 
 ## Providers
 
