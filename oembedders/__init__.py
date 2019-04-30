@@ -3,9 +3,7 @@ import json
 import yaml
 
 from glob import glob
-from os import listdir
 from os.path import join, abspath, dirname
-from urllib.parse import urlparse
 from oembed import OEmbedConsumer, OEmbedEndpoint, OEmbedNoEndpoint
 
 def embed(url):
