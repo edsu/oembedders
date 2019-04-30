@@ -6,11 +6,14 @@ from glob import glob
 from os import listdir
 from os.path import join, abspath, dirname
 from urllib.parse import urlparse
-from oembed import OEmbedConsumer, OEmbedEndpoint
+from oembed import OEmbedConsumer, OEmbedEndpoint, OEmbedNoEndpoint
 
 def embed(url):
-    resp = consumer.embed(url)
-    return resp.getData()
+    try:
+        resp = consumer.embed(url)
+        return resp.getData()
+    except OEmbedNoEndpoint as e:
+        return None
 
 def yaml_files():
     pattern = join(dirname(abspath(__file__)), 'providers', '*.yml')

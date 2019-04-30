@@ -7,6 +7,10 @@ def test_no_scheme():
 def test_scheme():
     e = embed('https://twitter.com/jack/status/20')
     assert e['url'] == 'https://twitter.com/jack/status/20'
+
+def test_no_provider():
+    e = embed('https://inkdroid.org')
+    assert e == None
     
 def test_yaml_dir():
     assert len(yaml_files()) > 0
