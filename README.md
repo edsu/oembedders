@@ -6,6 +6,12 @@
 registry] to set up an oembed consumer that is configured with all known
 providers.
 
+### Install
+
+    pip install oembedders
+
+### Usage
+
 ```python
 from oembedders import embed
 
@@ -31,7 +37,7 @@ You can also use it from the command line:
       "height": 270
     }
 
-## Providers
+### Providers
 
 The provider registry data is maintained in [iamcal/oembed]. It can be updated
 at any time in oembedders with the supplied Makefile which will download the
