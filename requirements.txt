@@ -1,0 +1,3 @@
+pyyaml
+pytest
+python-oembed
