@@ -1,2 +1,4 @@
 .eggs
+dist
+build
 oembedders.egg-info/

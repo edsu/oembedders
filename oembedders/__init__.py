@@ -8,10 +8,6 @@ from os.path import join, abspath, dirname
 from urllib.parse import urlparse
 from oembed import OEmbedConsumer, OEmbedEndpoint
 
-def main():
-    url = sys.argv[1]
-    print(json.dumps(embed(url), indent=2))
-
 def embed(url):
     resp = consumer.embed(url)
     return resp.getData()
@@ -32,6 +28,15 @@ for provider in providers():
         schemes = e.get('schemes', [provider['provider_url'] + '*'])
         endpoint = OEmbedEndpoint(e['url'], schemes)
         consumer.addEndpoint(endpoint)
+
+def main():
+    if len(sys.argv) != 2:
+        sys.exit("usage: oembedders <url>")
+    url = sys.argv[1]
+    try:
+        print(json.dumps(embed(url), indent=2))
+    except Exception as e:
+        sys.exit(e)
 
 if __name__ == "__main__":
     main()
