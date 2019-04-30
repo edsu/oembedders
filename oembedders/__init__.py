@@ -9,6 +9,10 @@ from urllib.parse import urlparse
 from oembed import OEmbedConsumer, OEmbedEndpoint, OEmbedNoEndpoint
 
 def embed(url):
+    """
+    Try to get oembed metadata for a given URL. If no provider is known you will
+    get back None.
+    """
     try:
         resp = consumer.embed(url)
         return resp.getData()
@@ -16,10 +20,16 @@ def embed(url):
         return None
 
 def yaml_files():
+    """
+    Returns a list of the known provider yaml files.
+    """
     pattern = join(dirname(abspath(__file__)), 'providers', '*.yml')
     return glob(pattern)
 
 def providers():
+    """
+    Returns JSON for each of the providers.
+    """
     for path in yaml_files():
         yield yaml.load(open(path), Loader=yaml.SafeLoader)[0]
 
@@ -33,6 +43,9 @@ for provider in providers():
         consumer.addEndpoint(endpoint)
 
 def main():
+    """
+    The basic command line interface.
+    """
     if len(sys.argv) != 2:
         sys.exit("usage: oembedders <url>")
     url = sys.argv[1]
@@ -40,6 +53,7 @@ def main():
         print(json.dumps(embed(url), indent=2))
     except Exception as e:
         sys.exit(e)
+
 
 if __name__ == "__main__":
     main()
