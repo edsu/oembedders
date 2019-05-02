@@ -12,7 +12,7 @@ def yaml_files():
 if __name__ == "__main__":
     setup(
         name='oembedders',
-        version='0.0.1',
+        version='0.0.2',
         url='https://github.com/oembedders',
         author='Ed Summers',
         author_email='ehs@pobox.com',
