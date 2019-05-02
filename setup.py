@@ -7,17 +7,22 @@ from setuptools import setup
 long_description = open('README.md').read()
 
 def yaml_files():
-    return glob.glob(os.path.join('oembedders', 'providers', '*.yml'))
+    files = []
+    for filename in os.listdir(os.path.join('oembedders', 'providers')):
+        files.append(os.path.join('providers', filename))
+    return files
+
 
 if __name__ == "__main__":
     setup(
         name='oembedders',
-        version='0.0.2',
+        version='0.0.3',
         url='https://github.com/oembedders',
         author='Ed Summers',
         author_email='ehs@pobox.com',
         packages=['oembedders', ],
-        data_files=[('oembedders/providers', yaml_files())],
+        package_dir={'oembedders': 'oembedders'},
+        package_data={'oembedders': ['providers/*.yml']},
         description='A utility for dispatching to known oembed providers',
         long_description=long_description,
         long_description_content_type="text/markdown",
