@@ -1,4 +1,7 @@
-.eggs
+eggs
 dist
 build
 oembedders.egg-info/
+Pipfile*
+.eggs/
+*__pycache__
